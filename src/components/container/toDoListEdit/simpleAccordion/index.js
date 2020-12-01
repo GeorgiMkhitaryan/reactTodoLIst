@@ -58,26 +58,26 @@ function SimpleAccordion(state) {
               }
             }
           />
-          <Buttons
-            selectedItemId= {state.showItem._id}
-            mode= {state.editMode}
-            onEditTodo={state.onEditTodo}
-            onSaveTodo={state.saveTodo}
-            dellTodo={state.dellTodo}
-          />
-          {
-            state.editMode?
-            <ColorPicker
-              onChangeColorTodo={color => {
-                state.onChangeColorTodo(color)
-              }}
-            >
-
-            </ColorPicker>
-            :
-            <div></div>
-          }
         </AccordionDetails>
+        <Buttons
+          selectedItemId= {state.showItem._id}
+          mode= {state.editMode}
+          onEditTodo={state.onEditTodo}
+          onSaveTodo={state.saveTodo}
+          dellTodo={state.dellTodo}
+        />
+        {
+          state.editMode?
+          <ColorPicker
+            onChangeColorTodo={color => {
+              state.onChangeColorTodo(color)
+            }}
+          >
+
+          </ColorPicker>
+          :
+          <div></div>
+        }
       </Accordion>
     </div>
   );

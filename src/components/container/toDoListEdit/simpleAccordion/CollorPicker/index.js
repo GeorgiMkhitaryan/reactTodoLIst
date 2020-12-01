@@ -1,5 +1,6 @@
 import React from 'react';
 import { SketchPicker } from 'react-color';
+import "./index.css"
 
 export default class ColorPicker extends React.Component {
     state = {
@@ -10,13 +11,15 @@ export default class ColorPicker extends React.Component {
     };
   render() {
     return(
-        <SketchPicker 
-            color={ this.state.background }
-            onChangeComplete={ (color) => {
-                this.handleChangeComplete(color);
-                this.props.onChangeColorTodo(this.state.background)
-            } }
-        />
+        <div className="ColorPicker">
+            <SketchPicker
+                color={ this.state.background }
+                onChangeComplete={ (color) => {
+                    this.handleChangeComplete(color);
+                    this.props.onChangeColorTodo(this.state.background)
+                } }
+            />
+        </div>
     )
   }
 }

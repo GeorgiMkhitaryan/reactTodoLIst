@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import SaveIcon from '@material-ui/icons/Save';
+import "./index.css"
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -26,9 +27,9 @@ export default function Buttons(props) {
           Create
         </Button>
         :
-        <div>
+        <div style={ { flex: 1 } }>
           { props.mode?
-            <div>
+            <div className="editDeleteBut">
               <Button
                 disabled={props.mode}
                 variant="contained"
@@ -50,7 +51,7 @@ export default function Buttons(props) {
             </Button>
           </div>
           :
-          <div>
+          <div className="editDeleteBut">
             <Button
               onClick={()=> {
                 props.dellTodo(props.selectedItemId)
